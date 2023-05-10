@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public bool GameStarted = false;
     public GameObject Player;
 
+    private int _lives = 2;
+    private int _score = 0;
+
 
     private void Awake()
     {
@@ -33,5 +36,20 @@ public class GameManager : MonoBehaviour
     public void ReloadLevel()
     {
         SceneManager.LoadScene("Game");
+    }
+
+
+    public void UpdateLives()
+    {
+        _lives--;
+
+        if (_lives <= 0)
+            GameOver();
+    }
+
+
+    public void UpdateScore()
+    {
+        _score++;
     }
 }

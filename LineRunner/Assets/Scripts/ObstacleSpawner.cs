@@ -19,6 +19,7 @@ public class ObstacleSpawner : MonoBehaviour
         while(true)
         {
             Spawn();
+            GameManager.Instance.UpdateScore();
             yield return new WaitForSeconds(SpawnRate);
         }
     }

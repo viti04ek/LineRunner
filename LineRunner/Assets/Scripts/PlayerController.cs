@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            GameManager.Instance.GameOver();
+            GameManager.Instance.UpdateLives();
         }
     }
 }
