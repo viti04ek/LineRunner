@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     private int _lives = 2;
     private int _score = 0;
+
+    public Text ScoreText;
+    public Text LivesText;
 
 
     private void Awake()
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
     public void UpdateLives()
     {
         _lives--;
+        LivesText.text = $"Lives: {_lives}";
 
         if (_lives <= 0)
             GameOver();
@@ -51,5 +56,6 @@ public class GameManager : MonoBehaviour
     public void UpdateScore()
     {
         _score++;
+        ScoreText.text = $"Score: {_score}";
     }
 }
