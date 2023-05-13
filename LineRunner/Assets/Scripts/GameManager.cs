@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public Text ScoreText;
     public Text LivesText;
 
+    public GameObject MenuUI;
+    public GameObject GamePlayUI;
+    public GameObject Spawner;
+
 
     private void Awake()
     {
@@ -27,6 +31,9 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         GameStarted = true;
+        MenuUI.SetActive(false);
+        GamePlayUI.SetActive(true);
+        Spawner.SetActive(true);
     }
 
 
@@ -57,5 +64,11 @@ public class GameManager : MonoBehaviour
     {
         _score++;
         ScoreText.text = $"Score: {_score}";
+    }
+
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

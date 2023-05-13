@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.GameStarted)
         {
             _playerYPos = -_playerYPos;
             transform.position = new Vector3(transform.position.x, _playerYPos, 0);
