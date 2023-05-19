@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private float _playerYPos;
 
+    public GameObject Particle;
+
 
     void Start()
     {
@@ -15,10 +17,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GameManager.Instance.GameStarted)
+        if (GameManager.Instance.GameStarted)
         {
-            _playerYPos = -_playerYPos;
-            transform.position = new Vector3(transform.position.x, _playerYPos, 0);
+            if(!Particle.activeInHierarchy)
+                Particle.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                _playerYPos = -_playerYPos;
+                transform.position = new Vector3(transform.position.x, _playerYPos, 0);
+            }
         }
     }
 
