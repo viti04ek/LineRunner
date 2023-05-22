@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.Instance.GameStarted)
         {
-            if(!Particle.activeInHierarchy)
+            if (!Particle.activeInHierarchy)
                 Particle.SetActive(true);
 
             if (Input.GetMouseButtonDown(0))
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             GameManager.Instance.UpdateLives();
+            GameManager.Instance.Shake();
         }
     }
 }
