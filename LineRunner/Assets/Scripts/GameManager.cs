@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public GameObject GamePlayUI;
     public GameObject Spawner;
 
+    public GameObject BackgroundParticle;
+
 
     private void Awake()
     {
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         MenuUI.SetActive(false);
         GamePlayUI.SetActive(true);
         Spawner.SetActive(true);
+        BackgroundParticle.SetActive(true);
     }
 
 
